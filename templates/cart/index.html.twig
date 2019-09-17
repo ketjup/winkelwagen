@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+    <h1>Product index</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Prijs</th>
+            <th>Aantal</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for product in Products %}
+            <td>{{ product.Product.naam }}</td>
+            <td>€{{ product.Product.prijs }}</td>
+            <td>{{ product.aantal }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <th>Totaal: €{{ totaal }}
+            <br>
+            <a class="btn btn-primary" href="{{ path('contact') }}">Checkout</a>
+        </th>
+        </tfoot>
+
+
+    </table>
+{% endblock %}
